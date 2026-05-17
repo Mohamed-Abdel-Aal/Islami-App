@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/core/my_theme_data.dart';
 import 'package:islami_app/feature/home/home_screen.dart';
 import 'package:islami_app/feature/onboarding/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,6 +29,8 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName:(context)=>HomeScreen(),
         OnboardingScreen.routeName:(context)=>OnboardingScreen(),
       } ,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode:ThemeMode.dark,
     );
   }
 }
