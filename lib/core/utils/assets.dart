@@ -1,13 +1,15 @@
-
 class AppImages {
-//Home screen
+  //Home screen
   static const String islamiLogo = "assets/images/islami_logo.png";
   static const String quranBackground = "assets/images/quran_bg.png";
   static const String hadithBackground = "assets/images/hadeth_bg.png";
   static const String radioBackground = "assets/images/radio_bg.png";
   static const String sebhaBackground = "assets/images/sebha_bg.png";
   static const String timeBackground = "assets/images/time_bg.png";
-
+  static const String mostRecently = "assets/images/most_recently_image.png";
+  static const String suraVector = "assets/images/vector_image.png";
+  //home tab
+  static const String iconSearch = "assets/icons/ic_search.png";
   //bottom navigation icons
   static const String quranIcon = "assets/icons/ic_quran.png";
   static const String hadithIcon = "assets/icons/ic_hadeth.png";
@@ -21,7 +23,4 @@ class AppImages {
   static const String onboarding3 = "assets/images/onboarding3.png";
   static const String onboarding4 = "assets/images/onboarding4.png";
   static const String onboarding5 = "assets/images/onboarding5.png";
-
 }
-
-
