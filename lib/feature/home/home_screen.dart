@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/core/utils/app_color.dart';
 import 'package:islami_app/core/utils/assets.dart';
 import 'package:islami_app/feature/home/tabs/hadeth/hadeth_tab.dart';
-import 'package:islami_app/feature/home/tabs/quran/quran_tab.dart';
+import 'package:islami_app/feature/home/tabs/quran/presentation/screens/quran_tab.dart';
 import 'package:islami_app/feature/home/tabs/radio/radio_tab.dart';
 import 'package:islami_app/feature/home/tabs/sebha/sebha_tab.dart';
 import 'package:islami_app/feature/home/tabs/time/time_tab.dart';
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Stack(
         children: [
           Image.asset(
-           backgroundImages[selectedIndex],
+            backgroundImages[selectedIndex],
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.fill,

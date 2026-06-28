@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:islami_app/core/utils/app_color.dart';
-import 'package:islami_app/core/utils/assets.dart';
-import 'package:islami_app/feature/home/tabs/quran/sura_list_widget.dart';
-
-class QuranTab extends StatelessWidget {
-  List<String> arabicQuranSuras = [
+class SuraModel {
+  //data class
+  String suraArabicName;
+  String suraEnglishName;
+  String numOfVerses;
+  int index;
+  static List<String> suraArabicNameList = [
     "الفاتحه",
     "البقرة",
     "آل عمران",
@@ -120,7 +120,7 @@ class QuranTab extends StatelessWidget {
     "الفلق",
     "الناس",
   ];
-  List<String> englishQuranSuras = [
+  static List<String> suraEnglishNameList = [
     "Al-Fatiha",
     "Al-Baqarah",
     "Aal-E-Imran",
@@ -236,7 +236,7 @@ class QuranTab extends StatelessWidget {
     "Al-Falaq",
     "An-Nas",
   ];
-  List<String> ayaNumber = [
+  static List<String> numberOfVersesList = [
     '7',
     '286',
     '200',
@@ -352,102 +352,20 @@ class QuranTab extends StatelessWidget {
     '5',
     '6',
   ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(child: Image.asset(AppImages.islamiLogo)),
-          TextField(
-            cursorColor: AppColors.whiteColor,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide(color: AppColors.primaryGold, width: 2),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide(color: AppColors.primaryGold, width: 2),
-              ),
-              prefixIcon: ImageIcon(
-                color: AppColors.primaryGold,
-                AssetImage(AppImages.quranIcon),
-              ),
-              hintText: 'Sura Name',
-              hintStyle: TextStyle(
-                fontSize: 16,
-                color: AppColors.whiteColor,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          SizedBox(height: 20),
-          Text(
-            "Most Recently",
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          SizedBox(height: 10),
-          Container(
-            decoration: BoxDecoration(
-              color: AppColors.primaryGold,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('SuraEn'),
-                    Text('SuraAr'),
-                    Text('Aya Number'),
-                  ],
-                ),
-                Image.asset(AppImages.mostRecently),
-              ],
-            ),
-          ),
-          SizedBox(height: 10),
-          Text(
-            "Sura List",
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          SizedBox(height: 10),
-          Expanded(
-            child: ListView.separated(
-              separatorBuilder: (context, index) {
-                return Divider(
-                  color: AppColors.whiteColor,
-                  thickness: 2,
-                  indent: 25.5,
-                  endIndent: 25.5,
-                );
-              },
-              padding: EdgeInsets.zero,
-              itemBuilder: (context, index) {
-                return SuraListWidget(
-                  index: index + 1,
-                  suraEnName: englishQuranSuras[index],
-                  suraArName: arabicQuranSuras[index],
-                  ayaNumber: ayaNumber[index],
-                );
-              },
-              itemCount: ayaNumber.length,
-            ),
-          ),
-        ],
-      ),
+  SuraModel({
+    required this.suraArabicName,
+    required this.suraEnglishName,
+    required this.numOfVerses,
+    required this.index,
+  });
+  static SuraModel getSuraModel(int index) {
+    return SuraModel(
+      suraArabicName: suraArabicNameList[index],
+      suraEnglishName: suraEnglishNameList[index],
+      numOfVerses: numberOfVersesList[index],
+      index: index,
     );
   }
+
+  static int getItemCount() => numberOfVersesList.length;
 }

@@ -8,6 +8,7 @@ class AppImages {
   static const String timeBackground = "assets/images/time_bg.png";
   static const String mostRecently = "assets/images/most_recently_image.png";
   static const String suraVector = "assets/images/vector_image.png";
+  static const String suraDetailsBackground = "assets/images/details_bg.png";
   //home tab
   static const String iconSearch = "assets/icons/ic_search.png";
   //bottom navigation icons
